@@ -1,8 +1,53 @@
 @import "tailwindcss";
 
-:root {
+:root[data-theme="light"] {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e293b;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --primary: #1e40af;
+  --primary-foreground: #ffffff;
+  --secondary: #eff6ff;
+  --secondary-foreground: #1e40af;
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+:root[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --border: #334155;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #1e293b;
+  --secondary-foreground: #60a5fa;
+  --accent: #60a5fa;
+  --accent-foreground: #0f172a;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+    0 4px 6px -4px rgb(0 0 0 / 0.3);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.3),
+    0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
 }
 
 @theme inline {
@@ -12,15 +57,156 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styles de base avec ombrage */
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ombres pour les éléments interactifs */
+button {
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+button:active {
+  box-shadow: var(--shadow-sm);
+  transform: translateY(0);
+}
+
+/* Ombres pour les sections */
+section {
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  opacity: 0.5;
+}
+
+/* Effets de profondeur pour les containers */
+.container {
+  position: relative;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* Ombres pour les images */
+img {
+  box-shadow: var(--shadow);
+  border-radius: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+img:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Effets de texte avec ombre */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ombres pour les éléments de navigation */
+nav {
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+/* Effets de profondeur pour les badges */
+.badge {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Ombres pour les formulaires */
+input,
+textarea,
+select {
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: var(--shadow);
+  outline: none;
+}
+.title-gradient {
+  background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }

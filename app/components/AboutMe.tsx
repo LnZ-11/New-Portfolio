@@ -93,7 +93,7 @@ export default function AboutMe() {
                 alt="Lyes Lattari"
                 width={400}
                 height={400}
-                className="rounded-lg translate-y-[20px] lg:translate-y-[80px]"
+                className="rounded-lg translate-y-[85px] lg:translate-y-[80px]"
               />
             </div>
             <p className="text-sm text-muted-foreground text-justify px-8 drop-shadow-sm">

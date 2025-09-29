@@ -96,7 +96,7 @@ export default function AboutMe() {
                 className="rounded-lg translate-y-[20px] lg:translate-y-[80px]"
               />
             </div>
-            <p className="text-xl text-muted-foreground text-justify max-w-xl drop-shadow-sm">
+            <p className="text-sm text-muted-foreground text-justify px-8 drop-shadow-sm">
               Je m&apos;appelle <strong>Lyes Lattari</strong> j&apos;ai {new Date().getFullYear() - 1999} ans, développeur Fulstack
               passionné par <strong>ReactJS et Next.js</strong> ainsi que tout le pouvoir de <strong>JavaScript</strong>.<br />
               Depuis ma tendre enfance, j&apos;ai toujours été fasciné par l&apos;informatique. je

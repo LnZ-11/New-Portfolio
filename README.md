@@ -1,62 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Professional Portfolio
+
+Welcome to the source code of my professional portfolio. This project showcases my work, skills, and professional journey through a modern and responsive interface.
+
+## Technologies Used
+
+### Core Frameworks & Libraries
+
+- **Next.js 15** - React framework for server-side rendering (SSR) and static site generation (SSG)
+- **React 19** - JavaScript library for building user interfaces
+- **TypeScript** - Static typing for better code maintainability
+- **Tailwind CSS** - Utility-first CSS framework for responsive and modern design
+- **Turbopack** - For ultra-fast development builds
+
+### State Management & Validation
+
+- **React Hook Form** - High-performance form management
+- **Zod** - Type-first schema validation
+- **Class Variance Authority** - Component variant management
+
+### UI Components
+
+- **Radix UI** - Accessible and customizable components
+- **Lucide React** - Modern icon library
+- **React Icons** - Comprehensive collection of popular icons
+
+### Additional Tools
+
+- **Nodemailer** - For handling contact form email submissions
+- **ESLint** - Static code analysis
+- **Prettier** - Consistent code formatting
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [REPO_URL]
+   cd newport
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Set up environment variables:
+   Create a `.env.local` file in the root directory with the following variables:
+   ```env
+   # Email configuration
+   EMAIL_USER=your-email@example.com
+   EMAIL_PASS=your-app-password
+   ```
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Fonctionnalités du Formulaire de Contact
-
-Le formulaire de contact inclut maintenant :
-
-- ✅ **Champ Nom** avec icône User
-- ✅ **Champ Email** avec icône Mail
-- ✅ **Champ Téléphone** avec sélecteur d'indicatif international (PhoneInput)
-- ✅ **Champ Message** avec icône MessageSquare
-- ✅ **Messages d'erreur** stylés avec icônes
-- ✅ **Feedback visuel** pour le succès/échec d'envoi
-- ✅ **Bouton d'envoi** avec animation de chargement
-
-### Configuration requise
-
-Pour que le formulaire fonctionne, vous devez configurer les variables d'environnement suivantes dans un fichier `.env.local` :
-
-```env
-# Configuration Gmail pour l'envoi d'emails
-EMAIL_USER=votre-email@gmail.com
-EMAIL_PASS=votre-mot-de-passe-app
+```bash
+npm run build
+# then
+npm start
 ```
 
-### Instructions pour configurer Gmail App Password :
+## Deployment
 
-1. Activez la validation en deux étapes sur votre compte Google
-2. Générez un mot de passe d'application : https://myaccount.google.com/apppasswords
-3. Utilisez le mot de passe généré comme `EMAIL_PASS`
+This project is optimized for deployment on Vercel but can be deployed to any Node.js-compatible platform.
 
-**Important** : Ne jamais commiter le fichier `.env.local` dans Git !
+## Features
 
-## Learn More
+- **Modern Design** with responsive user interface
+- **Contact Form** with complete validation
+- **Performance Optimization** using Next.js and Turbopack
+- **SEO Optimized** with server-side rendering
+- **Smooth Animations** for enhanced user experience
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.

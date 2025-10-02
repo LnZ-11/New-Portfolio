@@ -65,9 +65,9 @@ const education = [
   },
   {
     degree: "Licence Automatique",
-    school: "Institut Polytechnique",
+    school: "Université Mouloud Mameri Tizi Ouzou",
     period: "2022 - 2025",
-    description: "Fondamentaux en programmation et algorithmique",
+    description: "Automates et programmations",
     icon: BookOpen,
   },
 ];
@@ -86,14 +86,17 @@ export default function AboutMe() {
               À Propos de Moi
             </h2>
           </div>
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-5xl mx-auto">
-            <div className="relative w-100 h-100 bg-gradient-to-br from-secondary to-accent flex items-center justify-center rounded-full overflow-hidden shadow-[0_0_60px_rgba(147,51,234,0.3),0_0_120px_rgba(147,51,234,0.2),0_0_180px_rgba(147,51,234,0.1)]">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-5xl lg:max-w-8xl mx-auto">
+            <div className="relative w-100 h-100 lg:w-1/2 lg:h-1/2 bg-gradient-to-br from-secondary 
+            to-accent flex items-center justify-center rounded-full overflow-hidden 
+            shadow-[0_0_60px_rgba(147,51,234,0.3),0_0_120px_rgba(147,51,234,0.2),0_0_180px_rgba(147,51,234,0.1)]"
+            >
               <Image
                 src="/images/lyes-lattari-stage.png"
                 alt="Lyes Lattari"
                 width={400}
                 height={400}
-                className="rounded-lg translate-y-[85px] lg:translate-y-[80px]"
+                className="rounded-lg translate-y-[85px] lg:translate-y-[0px]"
               />
             </div>
             <p className="text-sm text-muted-foreground text-justify px-8 drop-shadow-sm">

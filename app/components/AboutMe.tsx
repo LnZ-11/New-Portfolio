@@ -58,7 +58,7 @@ const education = [
   {
     degree: "Formation en Développement Web",
     school: "Centre de formation Expression",
-    period: "2022 - 2023",
+    period: "2023 - 2024",
     description:
       "Spécialisation en développement full-stack et architectures modernes",
     icon: GraduationCap,

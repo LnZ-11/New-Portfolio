@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from './UI/ThemeToggle';
 
 const navItems = [
   { name: 'About Me', href: '#about' },

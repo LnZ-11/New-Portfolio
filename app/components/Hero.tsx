@@ -33,7 +33,7 @@ export default function Hero() {
               Lyes Lattari
             </h1>
             <h2 className="text-xl sm:text-2xl font-bold text-accent-foreground mb-8 drop-shadow-[0_3px_6px_rgba(0,0,0,0.3),0_1px_3px_rgba(0,0,0,0.2)] title-gradient">
-              Développeur Full Stack
+              Développeur Web Front End
             </h2>
             <p className="text-lg text-accent-foreground/90 mb-10 max-w-lg leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.25),0_1px_2px_rgba(0,0,0,0.15)]">
               Passionné par la création d&apos;applications web modernes et

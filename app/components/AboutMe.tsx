@@ -7,7 +7,7 @@ import {
   GraduationCap,
   Languages,
   Calendar,
-  Users,
+  MonitorCog,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -46,11 +46,11 @@ const languages = [
 
 const experiences = [
   {
-    title: "Développeur Frontend",
-    company: "Startup Digital",
-    period: "2024 - Présent",
-    description: "Création d'interfaces utilisateur responsive et optimisées",
-    icon: Users,
+    title: "Vente et maintenance informatique",
+    company: "Tizi Flash",
+    period: "2022 - 2025",
+    description: "Vente et maintenance informatique software et hardware (PC, DVR de camera de surveillance, etc.)",
+    icon: MonitorCog,
   },
 ];
 

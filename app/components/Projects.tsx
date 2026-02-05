@@ -72,7 +72,7 @@ const projects = [
     id: 1,
     title: "Facturex",
     description:
-      "Mon App de Facturation qui utilise Puppeteer pour générer des factures en PDF puis les imprimer.",
+      "Mon App de Facturation intuitive qui utilise Puppeteer pour générer des factures en PDF puis les imprimer.",
     stack: ["React","Next.js", "TypeScript", "Tailwind CSS", "zod","puppeteer"],
     image: "/images/facturex-screenshot.png",
     githubUrl: "https://github.com/LnZ-11/facturex",

@@ -70,13 +70,13 @@ const techStack = [
 const projects = [
   {
     id: 1,
-    title: "Ancien Portfolio",
+    title: "Facturex",
     description:
-      "Mon ancien portfolio où j'utilise un fond avec des feuilles générées aléatoirement et qui bougent, en utilisant la bibliothèque Motion.",
-    stack: ["React","Next.js", "TypeScript", "Tailwind CSS", "zod"],
-    image: "/images/oldportfolio_screenshot.png",
-    githubUrl: "https://github.com/lyeslattari/Portfolio",
-    liveUrl: "https://myporfolio-lnz-11s-projects.vercel.app/",
+      "Mon App de Facturation qui utilise Puppeteer pour générer des factures en PDF puis les imprimer.",
+    stack: ["React","Next.js", "TypeScript", "Tailwind CSS", "zod","puppeteer"],
+    image: "/images/facturex-screenshot.png",
+    githubUrl: "https://github.com/LnZ-11/facturex",
+    liveUrl: "https://facturex-lilac.vercel.app/",
     status: "Terminé",
   },
   {

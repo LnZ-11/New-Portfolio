@@ -29,16 +29,16 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight drop-shadow-[0_4px_2px_rgba(0,0,0,0.4),0_2px_4px_rgba(0,0,0,0.3)]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Lyes Lattari
             </h1>
-            <h2 className="text-xl sm:text-2xl font-bold text-accent-foreground mb-8 drop-shadow-[0_3px_6px_rgba(0,0,0,0.3),0_1px_3px_rgba(0,0,0,0.2)] title-gradient">
-              Développeur Web Front End
+            <h2 className="text-xl sm:text-2xl font-bold text-accent-foreground mb-8 title-gradient">
+              Développeur d&rsquo;applications web | Solutions digitales
             </h2>
-            <p className="text-lg text-accent-foreground/90 mb-10 max-w-lg leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.25),0_1px_2px_rgba(0,0,0,0.15)]">
-              Passionné par la création d&apos;applications web modernes et
-              performantes. J&apos;allie créativité et expertise technique pour
-              transformer vos idées en solutions digitales exceptionnelles.
+            <p className="text-lg text-accent-foreground/90 mb-10 max-w-lg leading-relaxed">
+              Je crée des solutions web qui simplifient la vie de votre entreprise et vous font gagner du temps
+              Des applications web prêtes à l&rsquo;emploi pour digitaliser votre activité, attirer plus de clients et automatiser vos tâches.
+              Votre business a besoin d&rsquo;un outil qui fonctionne vraiment ? Je vous le livre, rapidement et sans complexité.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

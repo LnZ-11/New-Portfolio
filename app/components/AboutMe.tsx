@@ -129,8 +129,9 @@ export default function AboutMe() {
               Aujourd&apos;hui, je crée bien plus que des applis fonctionnelles : je
               conçois des <strong>Solutions</strong> qui facilite la vie des gens.
               <br />
-              Je suis basé en Algérie mais aussi tourné vers l&apos;international, je suis prêt à
-              relever tout projet ou défi, pour offrir les meilleurs solutions à tout type de problémes
+              Je transforme vos idées ou besoins en outils web concrets : facturation, automatisation, gestion — prêts à l&rsquo;emploi, simples à utiliser et efficaces pour votre business
+              <br />
+              Je suis un développeur qui ne se contente pas de coder : je crée des applications qui vous font gagner du temps, éviter les erreurs manuelles et améliorer vos opérations quotidiennes.
               <br />
             </p>
           </div>

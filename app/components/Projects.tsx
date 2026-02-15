@@ -72,10 +72,10 @@ const projects = [
     id: 1,
     title: "Facturex",
     description:
-      "Mon App de Facturation intuitive qui utilise Puppeteer pour générer des factures en PDF puis les imprimer.",
+      "App de facturation intuitive — créez, envoyez et suivez vos factures en quelques clics. Un outil complet pour remplacer vos feuilles Excel et gagner des heures chaque semaine.",
     stack: ["React","Next.js", "TypeScript", "Tailwind CSS", "zod","puppeteer"],
     image: "/images/facturex-screenshot.png",
-    githubUrl: "https://github.com/LnZ-11/facturex",
+    githubUrl: null,
     liveUrl: "https://facturex-lilac.vercel.app/",
     status: "Terminé",
   },
@@ -83,7 +83,7 @@ const projects = [
     id: 2,
     title: "Automatisation Mise en Ligne E-mail",
     description:
-      "Un script NodeJS qui prends les emails enregistrer dans le logiciel de caisse d'un restaurant et les mets en ligne vers Mailjet chaque nuit a 2h du matin.",
+      "Script d'automatisation marketing — synchronisation quotidienne des emails pour vos campagnes, sans intervention manuelle. Plus de temps, moins d’erreurs.",
     stack: ["Node.js", "TypeScript"],
     image: null,
     githubUrl: "https://github.com/LnZ-11/automatisation-email-l-addition",
@@ -207,7 +207,7 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="flex gap-3">
-                    <a
+                  { project.githubUrl && <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -216,6 +216,7 @@ export default function Projects() {
                       <Github className="w-4 h-4 drop-shadow-lg" />
                       Code
                     </a>
+                    }
                     {project.liveUrl && (
                     <a
                       href={project.liveUrl}

@@ -10,69 +10,71 @@ import {
   MonitorCog,
 } from "lucide-react";
 import Image from "next/image";
-
-const languages = [
-  {
-    name: "Français",
-    level: "Natif",
-    flag: "🇫🇷",
-    description: "Ma premiere langue",
-  },
-  {
-    name: "Kabyle",
-    level: "Natif",
-    flag: "ⵣ",
-    description: "Langue berbère maternelle",
-  },
-  {
-    name: "Arabe",
-    level: "Avancé",
-    flag: "🇩🇿",
-    description: "Arabe classique et dialectal",
-  },
-  {
-    name: "Anglais",
-    level: "Avancé",
-    flag: "🇺🇸",
-    description: "Courant - Technique & Business",
-  },
-  {
-    name: "Italien",
-    level: "Débutant",
-    flag: "🇮🇹",
-    description: "Apprentissage en cours",
-  },
-];
-
-const experiences = [
-  {
-    title: "Vente et maintenance informatique",
-    company: "Tizi Flash",
-    period: "2022 - 2025",
-    description: "Vente et maintenance informatique software et hardware (PC, DVR de camera de surveillance, etc.)",
-    icon: MonitorCog,
-  },
-];
-
-const education = [
-  {
-    degree: "Formation en Développement Web",
-    school: "Centre de formation Expression",
-    period: "2023 - 2024",
-    description:
-      "Spécialisation en développement full-stack et architectures modernes",
-    icon: GraduationCap,
-  },
-  {
-    degree: "Licence Automatique",
-    school: "Université Mouloud Mameri Tizi Ouzou",
-    period: "2022 - 2025",
-    description: "Automates et programmations",
-    icon: BookOpen,
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 export default function AboutMe() {
+  const { t } = useLanguage();
+
+  const languages = [
+    {
+      name: "Français",
+      level: "Natif",
+      flag: "🇫🇷",
+      description: t.about.items.languages.fr.description,
+    },
+    {
+      name: "Kabyle",
+      level: "Natif",
+      flag: "ⵣ",
+      description: t.about.items.languages.kab.description,
+    },
+    {
+      name: "Arabe",
+      level: "Avancé",
+      flag: "🇩🇿",
+      description: t.about.items.languages.ar.description,
+    },
+    {
+      name: "Anglais",
+      level: "Avancé",
+      flag: "🇺🇸",
+      description: t.about.items.languages.en.description,
+    },
+    {
+      name: "Italien",
+      level: "Débutant",
+      flag: "🇮🇹",
+      description: t.about.items.languages.it.description,
+    },
+  ];
+
+  const experiences = [
+    {
+      title: t.about.items.experience.tizi.title,
+      company: "Tizi Flash",
+      period: "2022 - 2025",
+      description: t.about.items.experience.tizi.description,
+      icon: MonitorCog,
+    },
+  ];
+
+  const education = [
+    {
+      degree: t.about.items.education.formation.degree,
+      school: "Centre de formation Expression",
+      period: "2023 - 2024",
+      description: t.about.items.education.formation.description,
+      icon: GraduationCap,
+    },
+    {
+      degree: t.about.items.education.university.degree,
+      school: "Université Mouloud Mameri Tizi Ouzou",
+      period: "2022 - 2025",
+      description: t.about.items.education.university.description,
+      icon: BookOpen,
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -83,7 +85,7 @@ export default function AboutMe() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <Globe className="w-8 h-8 text-primary drop-shadow-md" />
             <h2 className="text-4xl sm:text-5xl font-bold text-foreground drop-shadow-sm title-gradient">
-              À Propos de Moi
+              {t.about.title}
             </h2>
           </div>
           <div className="flex flex-col lg:flex-row items-center justify-center gap-16 max-w-5xl lg:max-w-8xl mx-auto">
@@ -100,38 +102,27 @@ export default function AboutMe() {
               />
             </div>
             <p className="text-sm text-muted-foreground text-justify px-8 drop-shadow-sm">
-              Je m&apos;appelle <strong>Lyes Lattari</strong> j&apos;ai {new Date().getFullYear() - 1999} ans, développeur Fulstack
-              passionné par <strong>ReactJS et Next.js</strong> ainsi que tout le pouvoir de <strong>JavaScript</strong>.<br />
-              Depuis ma tendre enfance, j&apos;ai toujours été fasciné par l&apos;informatique. je
-              passais des heures à monter, démonter et bidouiller mon PC juste pour le
-              plaisir.
+              {t.about.intro1} <strong>Lyes Lattari</strong> {t.about.intro2} {new Date().getFullYear() - 1999} {t.about.intro3} <strong>ReactJS {t.footer.and} Next.js</strong> {t.about.intro4} <strong>JavaScript</strong>.<br />
+              {t.about.p1}
               <br />
               <br />
-              Durant mes études en <strong>génie automatique</strong> j&apos;ai rapidement 
-              compris que ma véritable passion n&apos;était pas dans les fils et
-              circuits, loin de là même. J&apos;ai plutôt trouver ma voie dans la <strong>programmation</strong>.<br />
-              Au début, même les langages complexes comme le C++, l&apos;assembleur 8086 ou
-              Pascal m&apos;ont montré la beauté brute de la logique, du code et de la capaciter de creer une chose de mes prpres main.
-              J&apos;ai ensuite choisi le language <strong>JavaScript</strong> pour jouer mes symphony.
+              {t.about.p2}
+              <br />
+              {t.about.p3}
               <br />
               <br />
-              Mes premiers pas en HTML, CSS et PHP, puis une formation
-              full-stack, ont confirmé ma voie.
+              {t.about.p4}
               <br />
-              La découverte de <strong>React</strong> a été un tournant : un
-              monde de possibilités s&apos;ouvrait à moi.
+              {t.about.p5}
               <br />
-              Sous l&apos;influence et les conseils de celui que je considère comme mon mentor
-              <strong>Melvyn Malherbe</strong>, chez qui j&apos;ai
-              appris à coder avec rigueur et créativité ainsi qu&apos;à bien exploiter les outils et stack moderne.
+              {t.about.p6}
               <br />
               <br />
-              Aujourd&apos;hui, je crée bien plus que des applis fonctionnelles : je
-              conçois des <strong>Solutions</strong> qui facilite la vie des gens.
+              {t.about.p7}
               <br />
-              Je transforme vos idées ou besoins en outils web concrets : facturation, automatisation, gestion — prêts à l&rsquo;emploi, simples à utiliser et efficaces pour votre business
+              {t.about.p8}
               <br />
-              Je suis un développeur qui ne se contente pas de coder : je crée des applications qui vous font gagner du temps, éviter les erreurs manuelles et améliorer vos opérations quotidiennes.
+              {t.about.p9}
               <br />
             </p>
           </div>
@@ -143,21 +134,13 @@ export default function AboutMe() {
             <div className="bg-secondary/30 rounded-2xl p-8 mb-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3 drop-shadow-sm">
                 <Languages className="w-6 h-6 text-primary" />
-                Mon Polyglottisme
+                {t.about.polyglotTitle}
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed drop-shadow-sm">
-                Mon parcours multiculturel m&apos;a permis de développer une
-                véritable passion pour les langues et la communication. Cette
-                richesse linguistique influence profondément ma façon
-                d&apos;appréhender le développement logiciel et les interactions
-                humaines.
+                {t.about.polyglotDesc1}
               </p>
               <p className="text-muted-foreground leading-relaxed drop-shadow-sm">
-                Chaque langue que j&apos;apprends m&apos;ouvre de nouvelles
-                perspectives et m&apos;enrichit professionnellement. Cette
-                diversité culturelle fait de moi un développeur plus empathique
-                et adaptable, capable de comprendre et de répondre aux besoins
-                variés des utilisateurs.
+                {t.about.polyglotDesc2}
               </p>
             </div>
 
@@ -165,7 +148,7 @@ export default function AboutMe() {
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3 drop-shadow-sm">
                 <Briefcase className="w-6 h-6 text-primary" />
-                Parcours Professionnel
+                {t.about.experienceTitle}
               </h3>
               <div className="space-y-6">
                 {experiences.map((exp, index) => (
@@ -202,7 +185,7 @@ export default function AboutMe() {
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3 drop-shadow-sm">
                 <GraduationCap className="w-6 h-6 text-primary" />
-                Parcours Universitaire
+                {t.about.educationTitle}
               </h3>
               <div className="space-y-6">
                 {education.map((edu, index) => (
@@ -239,7 +222,7 @@ export default function AboutMe() {
             <div className="bg-secondary/30 rounded-2xl p-8 sticky top-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3 drop-shadow-sm">
                 <Languages className="w-6 h-6 text-primary" />
-                Langues Maîtrisées
+                {t.about.languagesTitle}
               </h3>
 
               <div className="space-y-4">

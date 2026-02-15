@@ -1,26 +1,42 @@
-"use client"
+"use client";
 import { useState } from "react";
-import { useForm,Controller } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import {z} from "zod";
-import {zodResolver} from "@hookform/resolvers/zod";
-import { User, Mail, MessageSquare, Phone, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
-
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  User,
+  Mail,
+  MessageSquare,
+  Phone,
+  Send,
+  Loader2,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ContactForm() {
-    // Define the schema for the form with zod
-    const formSchema = z.object({
-      name: z.string().nonempty(),
-      email: z.string().email("invalide format").nonempty(),
-      phone: z.string().nonempty(),
-      message: z.string().nonempty(),
-    });
-    // typing the form data
+  const { t } = useLanguage();
+
+  // Define the schema for the form with zod
+  const formSchema = z.object({
+    name: z.string().nonempty(t.contact.error), // Using generic error for required fields or specific if added
+    email: z.string().email(t.contact.error).nonempty(t.contact.error),
+    phone: z.string().nonempty(t.contact.error),
+    message: z.string().nonempty(t.contact.error),
+  });
+  // typing the form data
   type FormData = z.infer<typeof formSchema>;
-    // use react-hook-form
-  const { register, handleSubmit, formState:{errors,isSubmitting},control} = useForm<FormData>({resolver:zodResolver(formSchema)});
-    // logging results
+  // use react-hook-form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    control,
+  } = useForm<FormData>({ resolver: zodResolver(formSchema) });
+  // logging results
   const [feedback, setFeedback] = useState("");
   const onSubmit = async (data: FormData) => {
     setFeedback("");
@@ -31,9 +47,9 @@ export default function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Erreur d'envoi");
-      setFeedback("✅ Email envoyé !");
+      setFeedback(t.contact.success);
     } catch (error) {
-      setFeedback("❌ Erreur lors de l'envoi");
+      setFeedback(t.contact.error);
       console.log(error);
     }
   };
@@ -47,10 +63,10 @@ export default function ContactForm() {
       <div className="relative max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-primary-foreground mb-6 drop-shadow-lg">
-            Me Contacter
+            {t.contact.title}
           </h2>
           <p className="text-xl text-accent-foreground/90 max-w-2xl mx-auto leading-relaxed">
-            N&apos;hésitez pas à me contacter pour discuter de vos projets ou pour toute question
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -60,14 +76,14 @@ export default function ContactForm() {
               <div className="space-y-2">
                 <label className="flex items-center text-sm font-semibold text-primary-foreground">
                   <User className="w-4 h-4 mr-2" />
-                  Nom
+                  {t.contact.nameLabel}
                 </label>
                 <input
                   type="text"
                   id="name"
                   {...register("name")}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-200 text-foreground placeholder:text-muted-foreground"
-                  placeholder="Votre nom"
+                  placeholder={t.contact.namePlaceholder}
                 />
                 {errors.name && (
                   <p className="text-sm text-red-500 mt-1 flex items-center">
@@ -80,14 +96,14 @@ export default function ContactForm() {
               <div className="space-y-2">
                 <label className="flex items-center text-sm font-semibold text-primary-foreground">
                   <Mail className="w-4 h-4 mr-2" />
-                  Email
+                  {t.contact.emailLabel}
                 </label>
                 <input
                   type="email"
                   id="email"
                   {...register("email")}
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-200 text-foreground placeholder:text-muted-foreground"
-                  placeholder="votre.email@exemple.com"
+                  placeholder={t.contact.emailPlaceholder}
                 />
                 {errors.email && (
                   <p className="text-sm text-red-500 mt-1 flex items-center">
@@ -101,7 +117,7 @@ export default function ContactForm() {
             <div className="space-y-2">
               <label className="flex items-center text-sm font-semibold text-primary-foreground">
                 <Phone className="w-4 h-4 mr-2" />
-                Téléphone
+                {t.contact.phoneLabel}
               </label>
               <Controller
                 control={control}
@@ -125,14 +141,14 @@ export default function ContactForm() {
             <div className="space-y-2">
               <label className="flex items-center text-sm font-semibold text-primary-foreground">
                 <MessageSquare className="w-4 h-4 mr-2" />
-                Message
+                {t.contact.messageLabel}
               </label>
               <textarea
                 id="message"
                 {...register("message")}
                 rows={6}
                 className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-200 text-foreground placeholder:text-muted-foreground resize-none"
-                placeholder="Votre message..."
+                placeholder={t.contact.messagePlaceholder}
               />
               <MessageSquare className="absolute left-3 top-12 w-4 h-4 text-muted-foreground pointer-events-none" />
               {errors.message && (
@@ -145,11 +161,13 @@ export default function ContactForm() {
 
             {/* Feedback */}
             {feedback && (
-              <div className={`text-center p-4 rounded-lg ${
-                feedback.includes("✅")
-                  ? "bg-green-500/10 text-green-600 border border-green-500/20"
-                  : "bg-red-500/10 text-red-500 border border-red-500/20"
-              }`}>
+              <div
+                className={`text-center p-4 rounded-lg ${
+                  feedback.includes("✅")
+                    ? "bg-green-500/10 text-green-600 border border-green-500/20"
+                    : "bg-red-500/10 text-red-500 border border-red-500/20"
+                }`}
+              >
                 <p className="font-medium flex items-center justify-center">
                   {feedback.includes("✅") ? (
                     <CheckCircle className="w-5 h-5 mr-2" />
@@ -170,12 +188,12 @@ export default function ContactForm() {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="animate-spin mr-3 h-5 w-5" />
-                    Envoi en cours...
+                    {t.contact.sending}
                   </>
                 ) : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
-                    Envoyer le message
+                    {t.contact.sendButton}
                   </>
                 )}
               </button>
@@ -184,5 +202,5 @@ export default function ContactForm() {
         </div>
       </div>
     </section>
-  )
+  );
 }

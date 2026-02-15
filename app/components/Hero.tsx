@@ -3,8 +3,11 @@
 import Image from "next/image";
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   const handleNavClick = (href: string) => {
     const sectionId = href.substring(1);
     const sectionElement = document.getElementById(sectionId);
@@ -30,15 +33,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Lyes Lattari
+              {t.hero.title}
             </h1>
             <h2 className="text-xl sm:text-2xl font-bold text-accent-foreground mb-8 title-gradient">
-              Développeur d&rsquo;applications web | Solutions digitales
+              {t.hero.subtitle}
             </h2>
             <p className="text-lg text-accent-foreground/90 mb-10 max-w-lg leading-relaxed">
-              Je crée des solutions web qui simplifient la vie de votre entreprise et vous font gagner du temps
-              Des applications web prêtes à l&rsquo;emploi pour digitaliser votre activité, attirer plus de clients et automatiser vos tâches.
-              Votre business a besoin d&rsquo;un outil qui fonctionne vraiment ? Je vous le livre, rapidement et sans complexité.
+              {t.hero.description1}
+              <br />
+              {t.hero.description2}
+              <br />
+              {t.hero.description3}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -49,7 +54,7 @@ export default function Hero() {
                   handleNavClick("#projects");
                 }}
               >
-                Voir mes projets
+                {t.hero.ctaProjects}
               </button>
               <button
                 className="border-2 border-accent-foreground text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:bg-accent-foreground hover:text-accent transition-all duration-300 shadow-[0_8px_16px_rgba(147,51,234,0.3),0_4px_8px_rgba(147,51,234,0.2)] hover:shadow-[0_12px_24px_rgba(147,51,234,0.4),0_6px_12px_rgba(147,51,234,0.3)]"
@@ -58,7 +63,7 @@ export default function Hero() {
                   handleNavClick("#contact");
                 }}
               >
-                Me contacter
+                {t.hero.ctaContact}
               </button>
             </div>
           </div>

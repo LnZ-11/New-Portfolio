@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   description: "Portfolio personnel de Lyes Lattari - Développeur Full Stack",
 };
 
+import { LanguageProvider } from "./context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,8 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        <main className="pt-16">{children}</main>
+        <LanguageProvider>
+          <Navbar />
+          <main className="pt-16">{children}</main>
+        </LanguageProvider>
       </body>
     </html>
   );

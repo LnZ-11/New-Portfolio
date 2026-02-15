@@ -9,14 +9,16 @@ import {
   ArrowUp,
   MapPin,
   ExternalLink,
-  Instagram
+  Instagram,
 } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -30,11 +32,10 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4 drop-shadow-md">
-                Contactez-moi
+                {t.footer.contactTitle}
               </h3>
               <p className="text-muted-foreground leading-relaxed drop-shadow-sm">
-                Je suis toujours ouvert aux nouvelles opportunités et collaborations.
-                N&apos;hésitez pas à me contacter !
+                {t.footer.contactText}
               </p>
             </div>
 
@@ -95,8 +96,10 @@ export default function Footer() {
                   <MapPin className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground">Localisation</p>
-                  <p className="text-sm">Algérie</p>
+                  <p className="font-medium text-foreground">
+                    {t.footer.locationLabel}
+                  </p>
+                  <p className="text-sm">{t.footer.locationValue}</p>
                 </div>
               </div>
             </div>
@@ -106,10 +109,10 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4 drop-shadow-md">
-                Navigation
+                {t.footer.navigationTitle}
               </h3>
               <p className="text-muted-foreground leading-relaxed drop-shadow-sm">
-                Accédez rapidement aux différentes sections de mon portfolio.
+                {t.footer.navigationText}
               </p>
             </div>
 
@@ -119,7 +122,7 @@ export default function Footer() {
                 className="p-3 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105 text-center group"
               >
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
-                  Accueil
+                  {t.nav.home}
                 </span>
               </a>
               <a
@@ -127,7 +130,7 @@ export default function Footer() {
                 className="p-3 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105 text-center group"
               >
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
-                  À Propos
+                  {t.nav.about}
                 </span>
               </a>
               <a
@@ -135,7 +138,7 @@ export default function Footer() {
                 className="p-3 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105 text-center group"
               >
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
-                  Projets
+                  {t.nav.projects}
                 </span>
               </a>
               <a
@@ -143,7 +146,7 @@ export default function Footer() {
                 className="p-3 bg-secondary/30 rounded-lg hover:bg-secondary/50 transition-all duration-200 hover:scale-105 text-center group"
               >
                 <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-200">
-                  Contact
+                  {t.nav.contact}
                 </span>
               </a>
             </div>
@@ -153,10 +156,10 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4 drop-shadow-md">
-                Suivez-moi
+                {t.footer.followTitle}
               </h3>
               <p className="text-muted-foreground leading-relaxed drop-shadow-sm">
-                Retrouvez-moi sur les réseaux sociaux et GitHub pour suivre mes projets.
+                {t.footer.followText}
               </p>
             </div>
 
@@ -199,9 +202,13 @@ export default function Footer() {
         <div className="border-t border-border mt-12 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
-              <span>© {currentYear} Lyes Lattari. Fait avec</span>
+              <span>
+                © {currentYear} Lyes Lattari. {t.footer.madeWith}
+              </span>
               <Heart className="w-4 h-4 text-red-500 fill-current animate-pulse" />
-              <span>et React</span>
+              <span>
+                {t.footer.and} React
+              </span>
             </div>
 
             <button
@@ -209,7 +216,7 @@ export default function Footer() {
               className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl group"
             >
               <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform duration-200" />
-              <span className="font-medium">Retour en haut</span>
+              <span className="font-medium">{t.footer.backToTop}</span>
             </button>
           </div>
         </div>

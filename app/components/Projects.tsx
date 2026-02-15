@@ -14,95 +14,103 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "../context/LanguageContext";
 
-const techStack = [
-  {
-    name: "Next.js",
-    icon: Layers,
-    description: "Framework React full-stack",
-    color: "text-black",
-    bgColor: "bg-gray-200 dark:bg-gray-600/20",
-  },
-  {
-    name: "React",
-    icon: Code,
-    description: "Bibliothèque JavaScript",
-    color: "text-blue-500",
-    bgColor: "bg-blue-50 dark:bg-blue-900/20",
-  },
-  {
-    name: "Node.js",
-    icon: Server,
-    description: "Runtime JavaScript",
-    color: "text-green-600",
-    bgColor: "bg-green-50 dark:bg-green-900/20",
-  },
-  {
-    name: "TypeScript",
-    icon: Type,
-    description: "JavaScript typé",
-    color: "text-blue-700",
-    bgColor: "bg-blue-50 dark:bg-blue-900/20",
-  },
-  {
-    name: "Prisma",
-    icon: Database,
-    description: "ORM moderne",
-    color: "text-gray-700",
-    bgColor: "bg-gray-50 dark:bg-gray-900/20",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: Palette,
-    description: "Framework CSS",
-    color: "text-cyan-500",
-    bgColor: "bg-cyan-50 dark:bg-cyan-900/20",
-  },
-  {
-    name: "Zustand",
-    icon: Store,
-    description: "State management",
-    color: "text-orange-500",
-    bgColor: "bg-orange-50 dark:bg-orange-900/20",
-  },
-];
-
-const projects = [
-  {
-    id: 1,
-    title: "Facturex",
-    description:
-      "App de facturation intuitive — créez, envoyez et suivez vos factures en quelques clics. Un outil complet pour remplacer vos feuilles Excel et gagner des heures chaque semaine.",
-    stack: ["React","Next.js", "TypeScript", "Tailwind CSS", "zod","puppeteer"],
-    image: "/images/facturex-screenshot.png",
-    githubUrl: null,
-    liveUrl: "https://facturex-lilac.vercel.app/",
-    status: "Terminé",
-  },
-  {
-    id: 2,
-    title: "Automatisation Mise en Ligne E-mail",
-    description:
-      "Script d'automatisation marketing — synchronisation quotidienne des emails pour vos campagnes, sans intervention manuelle. Plus de temps, moins d’erreurs.",
-    stack: ["Node.js", "TypeScript"],
-    image: null,
-    githubUrl: "https://github.com/LnZ-11/automatisation-email-l-addition",
-    liveUrl: null,
-    status: "Terminé",
-  },
-  {
-    id: 3,
-    title: "Application Timer",
-    description:
-      "Application de timer avec une interface utilisateur moderne et responsive.",
-    stack: ["Next.js", "React", "TypeScript", "Zustand"],
-    image: "/images/Timer_screenshot.png",
-    githubUrl: "https://github.com/LnZ-11/Timer",
-    liveUrl: "https://timer-nu-gray.vercel.app/",
-    status: "Terminé",
-  },
-];
 export default function Projects() {
+  const { t } = useLanguage();
+
+  const techStack = [
+    {
+      name: "Next.js",
+      icon: Layers,
+      description: t.projects.techStack.next,
+      color: "text-black",
+      bgColor: "bg-gray-200 dark:bg-gray-600/20",
+    },
+    {
+      name: "React",
+      icon: Code,
+      description: t.projects.techStack.react,
+      color: "text-blue-500",
+      bgColor: "bg-blue-50 dark:bg-blue-900/20",
+    },
+    {
+      name: "Node.js",
+      icon: Server,
+      description: t.projects.techStack.node,
+      color: "text-green-600",
+      bgColor: "bg-green-50 dark:bg-green-900/20",
+    },
+    {
+      name: "TypeScript",
+      icon: Type,
+      description: t.projects.techStack.ts,
+      color: "text-blue-700",
+      bgColor: "bg-blue-50 dark:bg-blue-900/20",
+    },
+    {
+      name: "Prisma",
+      icon: Database,
+      description: t.projects.techStack.prisma,
+      color: "text-gray-700",
+      bgColor: "bg-gray-50 dark:bg-gray-900/20",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: Palette,
+      description: t.projects.techStack.tailwind,
+      color: "text-cyan-500",
+      bgColor: "bg-cyan-50 dark:bg-cyan-900/20",
+    },
+    {
+      name: "Zustand",
+      icon: Store,
+      description: t.projects.techStack.zustand,
+      color: "text-orange-500",
+      bgColor: "bg-orange-50 dark:bg-orange-900/20",
+    },
+  ];
+
+  const projects = [
+    {
+      id: 1,
+      title: "Facturex",
+      description: t.projects.project1.description,
+      stack: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "zod",
+        "puppeteer",
+      ],
+      image: "/images/facturex-screenshot.png",
+      githubUrl: null,
+      liveUrl: "https://facturex-lilac.vercel.app/",
+      status: t.projects.status.completed,
+    },
+    {
+      id: 2,
+      title: "Automatisation Mise en Ligne E-mail",
+      description: t.projects.project2.description,
+      stack: ["Node.js", "TypeScript"],
+      image: null,
+      githubUrl: "https://github.com/LnZ-11/automatisation-email-l-addition",
+      liveUrl: null,
+      status: t.projects.status.completed,
+    },
+    {
+      id: 3,
+      title: "Application Timer",
+      description: t.projects.project3.description,
+      stack: ["Next.js", "React", "TypeScript", "Zustand"],
+      image: "/images/Timer_screenshot.png",
+      githubUrl: "https://github.com/LnZ-11/Timer",
+      liveUrl: "https://timer-nu-gray.vercel.app/",
+      status: t.projects.status.completed,
+    },
+  ];
+
   return (
     <section
       id="projects"
@@ -112,17 +120,16 @@ export default function Projects() {
         {/* En-tête */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 drop-shadow-md">
-            Technic & Projects
+            {t.projects.headerTitle}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto drop-shadow-md">
-            Découvrez ma stack technique et explorez mes projets les plus
-            récents
+            {t.projects.headerDesc}
           </p>
         </div>
         <div className="mb-20">
           <div className="text-3xl font-bold text-foreground mb-12 text-center flex items-center justify-center gap-3 drop-shadow-md">
             <Zap className="w-8 h-8 text-primary drop-shadow-lg" />
-            <span className="title-gradient">Ma Stack Technique</span>
+            <span className="title-gradient">{t.projects.stackTitle}</span>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -151,7 +158,7 @@ export default function Projects() {
         <div>
           <div className="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3 drop-shadow-md ">
             <Code className="w-8 h-8 drop-shadow-lg" />
-            <span className="title-gradient">Mes Projets</span>
+            <span className="title-gradient">{t.projects.projectsTitle}</span>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -160,16 +167,16 @@ export default function Projects() {
                 key={project.id}
                 className="bg-background rounded-xl shadow-lg overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2"
               >
-              {project.image && (
-                <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-6xl border-b border-border shadow-inner overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={400}
-                />
-                </div>
-              )}
+                {project.image && (
+                  <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center text-6xl border-b border-border shadow-inner overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={400}
+                      height={400}
+                    />
+                  </div>
+                )}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <h4 className="text-xl font-bold text-foreground drop-shadow-lg">
@@ -177,9 +184,9 @@ export default function Projects() {
                     </h4>
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-medium shadow-lg ${
-                        project.status === "En production"
+                        project.status === t.projects.status.production
                           ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
-                          : project.status === "En développement"
+                          : project.status === t.projects.status.inProgress
                           ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400"
                           : "bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
                       }`}
@@ -207,27 +214,28 @@ export default function Projects() {
                     </div>
                   </div>
                   <div className="flex gap-3">
-                  { project.githubUrl && <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium hover:bg-secondary/80 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-                    >
-                      <Github className="w-4 h-4 drop-shadow-lg" />
-                      Code
-                    </a>
-                    }
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-secondary text-secondary-foreground px-4 py-2 rounded-lg font-medium hover:bg-secondary/80 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                      >
+                        <Github className="w-4 h-4 drop-shadow-lg" />
+                        Code
+                      </a>
+                    )}
                     {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
-                    >
-                      <ExternalLink className="w-4 h-4 drop-shadow-lg" />
-                      Demo
-                    </a>
-                  )}
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+                      >
+                        <ExternalLink className="w-4 h-4 drop-shadow-lg" />
+                        Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -241,7 +249,7 @@ export default function Projects() {
               className="inline-flex items-center gap-3 bg-background border-2 border-primary text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
             >
               <Github className="w-6 h-6 drop-shadow-lg" />
-              Voir tous mes projets sur GitHub
+              {t.projects.viewAllGithub}
               <ArrowRight className="w-5 h-5 drop-shadow-lg" />
             </a>
           </div>

@@ -86,7 +86,7 @@ export const translations = {
                 description: "App de facturation intuitive — créez, envoyez et suivez vos factures en quelques clics. Un outil complet pour remplacer vos feuilles Excel et gagner des heures chaque semaine.",
             },
             project2: {
-                description: "Script d'automatisation marketing — synchronisation quotidienne des emails pour vos campagnes, sans intervention manuelle. Plus de temps, moins d’erreurs.",
+                description: "Une application desktop moderne et autonome conçue pour optimiser la gestion des stocks et le suivi des ventes des PME. Conçue selon une approche offline-first, elle offre la fluidité et l'expérience visuelle d'un SaaS moderne, tout en garantissant la sécurité et la rapidité d'une solution locale indépendante d'internet.",
             },
             project3: {
                 description: "Application de timer avec une interface utilisateur moderne et responsive.",
@@ -208,7 +208,7 @@ export const translations = {
                 description: "Intuitive invoicing app — create, send, and track your invoices in a few clicks. A complete tool to replace your Excel sheets and save hours every week.",
             },
             project2: {
-                description: "Marketing automation script — daily email synchronization for your campaigns, without manual intervention. More time, fewer errors.",
+                description: "A modern, standalone desktop application built to streamline inventory tracking and sales workflows for SMEs. Designed with an offline-first architecture, it delivers the seamless user experience of a modern SaaS while ensuring maximum speed, data security, and full autonomy from internet connectivity.",
             },
             project3: {
                 description: "Timer application with a modern and responsive user interface.",

@@ -91,17 +91,17 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "Automatisation Mise en Ligne E-mail",
+      title: "Logistex",
       description: t.projects.project2.description,
-      stack: ["Node.js", "TypeScript"],
+      stack: ["ReacJS", "NextJS", "TypeScript", "prisma", "PostsgreSQL"],
       image: null,
-      githubUrl: "https://github.com/LnZ-11/automatisation-email-l-addition",
+      githubUrl: "https://github.com/LnZ-11/Logistex",
       liveUrl: null,
-      status: t.projects.status.completed,
+      status: t.projects.status.inProgress,
     },
     {
       id: 3,
-      title: "Application Timer",
+      title: "Logistex",
       description: t.projects.project3.description,
       stack: ["Next.js", "React", "TypeScript", "Zustand"],
       image: "/images/Timer_screenshot.png",
@@ -183,13 +183,12 @@ export default function Projects() {
                       {project.title}
                     </h4>
                     <span
-                      className={`px-2 py-1 rounded-full text-xs font-medium shadow-lg ${
-                        project.status === t.projects.status.production
-                          ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
-                          : project.status === t.projects.status.inProgress
+                      className={`px-2 py-1 rounded-full text-xs font-medium shadow-lg ${project.status === t.projects.status.production
+                        ? "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
+                        : project.status === t.projects.status.inProgress
                           ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400"
                           : "bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400"
-                      }`}
+                        }`}
                     >
                       {project.status}
                     </span>
@@ -241,6 +240,7 @@ export default function Projects() {
               </div>
             ))}
           </div>
+
           <div className="text-center">
             <a
               href="https://github.com/LnZ-11"
